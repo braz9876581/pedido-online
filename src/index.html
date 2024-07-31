@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido Online</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Faça seu Pedido</h1>
+        <div class="category" id="category-1">
+            <div class="item">
+                <img src="https://via.placeholder.com/50" alt="Item 1">
+                <div class="item-info">
+                    <h3>Cocada</h3>
+                    <div class="groupedInfo">
+                        <p>Cocada de Banana</p>
+                        <p>R$15</p>
+                    </div>
+                </div>
+                <button class="add-button" onclick="adicionarAoCarrinho('Item 1', 10)">+</button>
+            </div>
+            <div class="item">
+                <img src="https://via.placeholder.com/50" alt="Item 1">
+                <div class="item-info">
+                    <h3>Cocada</h3>
+                    <div class="groupedInfo">
+                        <p>Cocada de Chocolate</p>
+                        <p>R$15</p>
+                    </div>
+                </div>
+                <button class="add-button" onclick="adicionarAoCarrinho('Item 1', 10)">+</button>
+            </div>
+            <!-- Mais itens da categoria 1 -->
+        </div>
+        <h2>Carrinho</h2>
+        <div class="cart">
+            <div id="cart-items"></div>
+        </div>
+        <div class="total">
+            Total: $<span id="total">0.00</span>
+        </div>
+        <div class="checkout">
+            <h2>Informações de Entrega</h2>
+            <input type="text" id="nome" placeholder="Nome Completo">
+            <input type="text" id="endereco" placeholder="Endereço de Entrega">
+            <input type="tel" id="telefone" placeholder="Telefone">
+            <select id="metodo-pagamento">
+                <option value="Cartão">Cartão</option>
+                <option value="Dinheiro">Dinheiro</option>
+                <option value="PIX">PIX</option>
+            </select>
+            <button onclick="enviarPedido()">Enviar Pedido via WhatsApp</button>
+        </div>
+    </div>
+    <script src="./javascript.js"></script>
+</body>
+</html>
