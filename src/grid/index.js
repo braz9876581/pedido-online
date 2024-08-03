@@ -1,4 +1,4 @@
-let cart = [{type: 'Cocada', item: 'Cocada de Banana', price: 10, qnt: 1}]
+let cart = []
 
 function addCartItem (item, price) {
     if (!isCartItem(item)) {
