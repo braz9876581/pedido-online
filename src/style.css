@@ -1,6 +1,7 @@
 * {
     padding: 0;
     margin: 0;
+    user-select: none;
 }
 
 body {
@@ -9,29 +10,50 @@ body {
     background-attachment: fixed;
     background-size: cover;
     color: #333;
-    padding: 20px;
 }
+
 .container {
-    max-width: 800px;
-    margin: 0 auto;
-    background-color: #ffffff;
+    max-width: 650px;
+    margin: 20px auto;
+    background-color: #d4d4d4;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
+@media (max-width: 450px) {
+    .container {
+        border-radius: 0px;
+        margin: 0;
+    }
+}
+
 h1, h2 {
     text-align: center;
 }
 .category {
-    margin-bottom: 20px;
+    margin: 20px 0;
+    padding: 3px;
+    background-color: #ddd;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 6px;
+    max-height: 400px;
+    overflow: auto;
 }
 .item {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid #ddd;
-    padding: 10px 0;
+    padding: 10px;
+    margin-bottom: 2px;
+    border-radius: 6px;
+    background-color: rgb(202, 202, 202);
 }
+
+.item:hover {
+    background-color: rgb(150, 150, 150);
+}
+
 .item img {
     width: 50px;
     height: 50px;
@@ -42,9 +64,11 @@ h1, h2 {
 }
 .item-info h3 {
     margin: 0;
+    font-size: 1em;
 }
 .item-info p {
-    margin: 5px 0;
+    margin: 2px 0;
+    font-size: .7em;
 }
 .add-button {
     width: 50px;
@@ -64,21 +88,104 @@ h1, h2 {
 }
 
 .cart {
-    height: 120px;
+    height: 140px;
     padding: 10px;
+    border-radius: 6px;
     background-color: #dddddd;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
     overflow: auto;
 }
 
 .cart-item {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #c5c5c5;
     padding: 10px 0;
+
+    div.firstGroup {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+
+        div {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+
+            button {
+                border: none;
+                outline: none;
+                border-radius: 50%;
+                width: 25px;
+                height: 25px;
+                cursor: pointer;
+                color: white;
+            }
+
+            button.take {
+                background-color: brown;
+            }
+
+            button.take:hover {
+                background-color: rgb(240, 62, 62);
+            }
+
+            button.add {
+                background-color: rgb(42, 165, 42);
+            }
+
+            button.add:hover {
+                background-color: rgb(63, 196, 63);
+            }
+
+            span {
+                cursor: pointer;
+                color: brown;
+            }
+
+            span:hover {
+                color: rgb(243, 93, 93);
+            }
+        }
+    }
 }
 .total, .checkout {
     text-align: right;
-    margin-top: 10px;
+    margin-top: 19px;
+}
+
+.checkout {
+    div#checks {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        div {
+            width: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: left;
+
+            input {
+                width: 20px;
+            }
+
+            p {
+                font-size: .8em;
+                color: grey;
+            }
+        }
+
+        div:last-child {
+            justify-content: right;
+        }
+    }
+}
+
+.total {
+    font-size: 2em;
 }
 
 .checkout input, .checkout select {
